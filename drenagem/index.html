@@ -72,6 +72,9 @@ nav.scrolled { background:rgba(13,11,10,.96); backdrop-filter:blur(16px); paddin
 .nav-logo img { height:38px; width:auto; }
 .nav-brand { font-family:'Playfair Display',serif; font-size:17px; font-weight:600; color:var(--branco); line-height:1.15; }
 .nav-brand small { display:block; font-family:'Inter',sans-serif; font-size:9px; font-weight:500; letter-spacing:.22em; text-transform:uppercase; color:var(--ouro); margin-top:1px; }
+.nav-dir { display:flex; align-items:center; gap:26px; }
+.nav-link { font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.7); text-decoration:none; transition:color .3s; }
+.nav-link:hover { color:var(--ouro); }
 .nav-cta { border:1px solid var(--ouro); color:var(--ouro); padding:9px 20px; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; transition:background .3s, color .3s; }
 .nav-cta:hover { background:var(--ouro); color:var(--preto); }
 
@@ -169,6 +172,11 @@ a.ct-card:hover { background:rgba(201,168,76,.1); border-color:var(--ouro); tran
 .faixa p { font-size:15px; line-height:1.8; color:rgba(13,11,10,.7); margin-bottom:30px; }
 
 footer { background:var(--preto-medio); padding:48px 56px; text-align:center; border-top:1px solid rgba(201,168,76,.12); }
+.ft-servicos { max-width:900px; margin:0 auto 40px; padding-bottom:36px; border-bottom:1px solid rgba(255,255,255,.08); }
+.ft-servicos-t { font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--ouro); margin-bottom:18px; }
+.ft-servicos ul { list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
+.ft-servicos a { display:inline-block; border:1px solid rgba(201,168,76,.25); padding:9px 16px; font-size:13px; color:rgba(255,255,255,.75); text-decoration:none; transition:all .3s; }
+.ft-servicos a:hover { border-color:var(--ouro); color:var(--ouro); }
 footer img { height:48px; width:auto; margin:0 auto 14px; filter:brightness(0) invert(1); opacity:.85; }
 .ft-nome { font-family:'Playfair Display',serif; font-size:18px; font-weight:600; margin-bottom:10px; }
 .ft-copy { font-size:12px; color:rgba(255,255,255,.35); line-height:1.9; }
@@ -178,6 +186,12 @@ footer img { height:48px; width:auto; margin:0 auto 14px; filter:brightness(0) i
   nav, nav.scrolled { padding:14px 20px; }
   .nav-brand { font-size:15px; }
   .nav-logo img { height:32px; }
+  nav { background:rgba(13,11,10,.82); backdrop-filter:blur(10px); }
+  .nav-brand small { display:none; }
+  .nav-dir { gap:14px; }
+  .nav-link { font-size:10px; letter-spacing:.04em; white-space:nowrap; }
+  .nav-cta { padding:8px 12px; font-size:10px; }
+  .ft-servicos a { font-size:12px; padding:8px 12px; }
   .hero { min-height:auto; flex-direction:column; align-items:stretch; }
   .hero-foto { position:relative; width:100%; height:62vh; min-height:340px; order:0; }
   .hero-foto::before { background:linear-gradient(to top, var(--preto) 0%, rgba(13,11,10,.2) 45%, transparent 100%); }
@@ -223,7 +237,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img src="img/logo.png" alt="Método Toque de Ouro">
     <div class="nav-brand">Patrícia Caroline <small>Método Toque de Ouro</small></div>
   </a>
-  <a class="nav-cta" href="https://wa.me/557181486448?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20agendar%20uma%20drenagem.">Agendar</a>
+  <div class="nav-dir">
+    <a class="nav-link" href="#outros-servicos">Outros serviços</a>
+    <a class="nav-cta" href="https://wa.me/557181486448?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20agendar%20uma%20drenagem.">Agendar</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -384,6 +401,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <footer>
+  <div class="ft-servicos" id="outros-servicos">
+    <p class="ft-servicos-t">Todos os serviços do Espaço</p>
+    <ul>
+      <li><a href="#topo">Drenagem Linfática Toque de Ouro</a></li>
+      <li><a href="https://patriciacaroline8.github.io/#servicos">Microfisioterapia</a></li>
+      <li><a href="https://patriciacaroline8.github.io/#servicos">Protocolo Assinatura Toque de Ouro</a></li>
+      <li><a href="#gestantes">Drenagem Pós-Operatória</a></li>
+      <li><a href="#gestantes">Drenagem para Gestantes</a></li>
+      <li><a href="https://patriciacaroline8.github.io/#servicos">Massagem Relaxante</a></li>
+      <li><a href="https://patriciacaroline8.github.io/#servicos">Acupuntura</a></li>
+      <li><a href="https://patriciacaroline8.github.io/#servicos">Limpeza de Pele</a></li>
+      <li><a href="https://patriciacaroline8.github.io/#planos">Planos de Assinatura</a></li>
+    </ul>
+  </div>
   <img src="img/logo.png" alt="Método Toque de Ouro">
   <div class="ft-nome">Espaço Patrícia Caroline</div>
   <p class="ft-copy">Fisioterapeuta · CREFITO7 58124F · Itaigara, Salvador, BA<br>Telefone e WhatsApp: (71) 98148-6448<br><a href="https://patriciacaroline8.github.io/">Conheça todos os serviços</a> · <a href="https://instagram.com/apatriciacaroline" target="_blank" rel="noopener">@apatriciacaroline</a></p>
