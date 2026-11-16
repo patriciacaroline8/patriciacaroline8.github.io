@@ -418,7 +418,12 @@ footer .social{margin:6px 0 16px}
       if(window.Tally&&Tally.openPopup){
         e.preventDefault();
         Tally.openPopup(FORM_ID,{layout:'modal',width:640,overlay:true,hiddenFields:hidden,
-          onSubmit:function(){track('lua_candidatura_enviada',{form_id:FORM_ID});}});
+          onSubmit:function(payload){track('lua_candidatura_enviada',{form_id:FORM_ID});
+            var raw='';try{raw=JSON.stringify(payload||{}).toLowerCase();}catch(e){}
+            var nao=raw.indexOf('ainda não tenho condições')>-1||raw.indexOf('ainda n\\u00e3o tenho condi')>-1||raw.indexOf('8afb19a3-6364-4738-8509-5e8c75a4f0fe')>-1;
+            var sim=raw.indexOf('estou pronta para investir')>-1||raw.indexOf('preciso conversar sobre as condi')>-1||raw.indexOf('e23d02ac-d84b-4859-97e2-7aea452655c7')>-1||raw.indexOf('47b78676-f753-4381-9690-da727328f2ae')>-1;
+            if(sim&&!nao){track('lua_candidatura_qualificada',{form_id:FORM_ID});}
+            else if(!sim&&!nao){track('lua_candidatura_sem_classificacao',{form_id:FORM_ID});}}});
       }
     });
   });
